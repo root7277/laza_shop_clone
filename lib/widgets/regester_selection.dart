@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+class RegesterSelection extends StatefulWidget {
+  final String image;
+  final String title;
+  final Color colorR;
+  const RegesterSelection({super.key, required this.image, required this.title, required this.colorR});
+
+  @override
+  State<RegesterSelection> createState() => _RegesterSelectionState();
+}
+
+class _RegesterSelectionState extends State<RegesterSelection> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      decoration: BoxDecoration(
+        color: widget.colorR,
+        borderRadius: const BorderRadius.all(Radius.circular(10))
+      ),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(widget.image),
+            Text(widget.title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600))
+          ],
+        ),
+      ),
+    );
+  }
+}

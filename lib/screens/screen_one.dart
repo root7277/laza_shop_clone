@@ -22,7 +22,6 @@ class _ScreenOneState extends State<ScreenOne> {
             bottom: 15,
             child: Container(
               height: 244,
-              width: 345,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(10))
@@ -39,7 +38,9 @@ class _ScreenOneState extends State<ScreenOne> {
                   const GenderSelection(),
                   const SizedBox(height: 10),
                   TextButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      Navigator.pushNamed(context, 'screenTwo');
+                    }, 
                     child: const Text(
                       'Skip',
                       style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Color(0xFF8F959E)),
