@@ -76,7 +76,7 @@ class _ScreenSixState extends State<ScreenSix> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, 'screenSix');
+                  Navigator.pushNamed(context, 'screenSeven');
                 },
                 child: Container(
                   width: 375,

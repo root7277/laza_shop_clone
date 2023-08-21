@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:laza_shop_clone/screens/screen_fiwe.dart';
 import 'package:laza_shop_clone/screens/screen_four.dart';
 import 'package:laza_shop_clone/screens/screen_one.dart';
+import 'package:laza_shop_clone/screens/screen_seven.dart';
 import 'package:laza_shop_clone/screens/screen_six.dart';
 import 'package:laza_shop_clone/screens/screen_tree.dart';
 import 'package:laza_shop_clone/screens/screen_two.dart';
@@ -32,6 +33,7 @@ class _MyAppState extends State<MyApp> {
         'screenFour':(context) => const ScreenFour(),
         'screenFiwe':(context) => const ScreenFiwe(),
         'screenSix':(context) => const ScreenSix(),
+        'screenSeven':(context) => const ScreenSeven(),
       },
     );
   }
