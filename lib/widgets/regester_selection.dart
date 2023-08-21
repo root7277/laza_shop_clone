@@ -14,19 +14,33 @@ class RegesterSelection extends StatefulWidget {
 class _RegesterSelectionState extends State<RegesterSelection> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      decoration: BoxDecoration(
-        color: widget.colorR,
-        borderRadius: const BorderRadius.all(Radius.circular(10))
-      ),
-      child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(widget.image),
-            Text(widget.title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600))
-          ],
+    return InkWell(
+      onTap: (){
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Center(child: Text('Create an Account', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500))),
+            backgroundColor: const Color(0xFF9775FA),
+            padding: const EdgeInsets.only(bottom: 40),
+            onVisible: (){
+              Navigator.pushNamed(context, 'screenTree');
+            },
+          ),
+        );
+      },
+      child: Container(
+        height: 50,
+        decoration: BoxDecoration(
+          color: widget.colorR,
+          borderRadius: const BorderRadius.all(Radius.circular(10))
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(widget.image),
+              Text(widget.title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600))
+            ],
+          ),
         ),
       ),
     );

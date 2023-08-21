@@ -16,8 +16,8 @@ class _GenderSelectionState extends State<GenderSelection> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          genderSelection('Men', 0),
-          genderSelection('Women', 1)
+          genderSelection('Man', 0),
+          genderSelection('Woman', 1)
         ],
       ),
     );
