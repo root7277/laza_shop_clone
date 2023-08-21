@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:laza_shop_clone/widgets/code_selection.dart';
 
-import '../widgets/text_feild.dart';
 
-class ScreenFiwe extends StatefulWidget {
-  const ScreenFiwe({super.key});
+class ScreenSix extends StatefulWidget {
+  const ScreenSix({super.key});
 
   @override
-  State<ScreenFiwe> createState() => _ScreenFiweState();
+  State<ScreenSix> createState() => _ScreenSixState();
 }
 
-class _ScreenFiweState extends State<ScreenFiwe> {
+class _ScreenSixState extends State<ScreenSix> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +40,7 @@ class _ScreenFiweState extends State<ScreenFiwe> {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Forgot Password', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600)),
+              Text('Verification Code', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600)),
             ],
           ),
           const SizedBox(height: 30),
@@ -51,18 +51,23 @@ class _ScreenFiweState extends State<ScreenFiwe> {
             ],
           ),
           const SizedBox(height: 50),
-          const TextFeildWidget(hintText: 'bill.sanders@example.com', label: 'Email Address'),
-          const SizedBox(height: 165),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Please write your email to receive a', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Color(0xFF8F959E))),
-            ],
+          const Padding(
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CodeSelection(text: '4'),
+                CodeSelection(text: '7'),
+                CodeSelection(text: '9'),
+                CodeSelection(text: '5'),
+              ],
+            ),
           ),
+          const SizedBox(height: 140),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('confirmation code to set a new password.', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Color(0xFF8F959E))),
+              Text('00:20 resend confirmation code.', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Color(0xFF8F959E))),
             ],
           ),
           const SizedBox(height: 30),
@@ -81,7 +86,7 @@ class _ScreenFiweState extends State<ScreenFiwe> {
                   ),
                   child: const Center(
                     child: Text(
-                      'Confirm Mail',
+                      'Confirm Code',
                       style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500, color: Color(0xFFFEFEFE)),
                     ),
                   ),
