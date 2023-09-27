@@ -22,17 +22,14 @@ class _ScreenFourState extends State<ScreenFour> {
           Padding(
             padding: const EdgeInsets.only(left: 30, top: 30),
             child: InkWell(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
               child: Container(
                 padding: const EdgeInsets.all(10),
                 width: 45,
                 height: 45,
-                decoration: const BoxDecoration(
-                  color: Color(0xFFF5F6FA),
-                  borderRadius: BorderRadius.all(Radius.circular(50))
-                ),
+                decoration: const BoxDecoration(color: Color(0xFFF5F6FA), borderRadius: BorderRadius.all(Radius.circular(50))),
                 child: SvgPicture.asset('assets/arrow.svg'),
               ),
             ),
@@ -61,9 +58,9 @@ class _ScreenFourState extends State<ScreenFour> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton(
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.pushNamed(context, 'screenFiwe');
-                  }, 
+                  },
                   child: const Text('Forgot password?', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Color(0xFFEA4335))),
                 ),
               ],
@@ -77,22 +74,23 @@ class _ScreenFourState extends State<ScreenFour> {
               children: [
                 const Text('Remember me', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20))),
                 Checkbox(
-                  activeColor: Colors.green,
-                  value: isChecked, 
-                  onChanged: (newBool){
-                    setState(() {
-                      isChecked = newBool;
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: const Center(child: Text('Login', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500))),
-                          backgroundColor: const Color(0xFF9775FA),
-                          padding: const EdgeInsets.only(bottom: 40),
-                          onVisible: (){},
-                        ),
-                      );
-                    });
-                  }
-                ),
+                    activeColor: Colors.green,
+                    value: isChecked,
+                    onChanged: (newBool) {
+                      setState(() {
+                        isChecked = newBool;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: const Center(child: Text('Login', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500))),
+                            backgroundColor: const Color(0xFF9775FA),
+                            padding: const EdgeInsets.only(bottom: 40),
+                            onVisible: () {
+                              Navigator.pushNamed(context, 'screenEight');
+                            },
+                          ),
+                        );
+                      });
+                    }),
               ],
             ),
           ),
