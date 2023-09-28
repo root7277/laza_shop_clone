@@ -16,30 +16,29 @@ class _ChooseClothesState extends State<ChooseClothes> {
         itemBuilder: (context, index) {
           return Column(
             children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, 'screenNine');
-                },
-                child: Stack(children: [
-                  Container(
-                    width: 160,
-                    height: 203,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Image.asset('assets/clothes.png'),
+              Stack(children: [
+                Container(
+                  width: 160,
+                  height: 203,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
                   ),
-                  const Positioned(
-                    left: 110,
-                    bottom: 175,
-                    right: 12,
-                    top: 15,
-                    child: IconFavorite(),
-                  ),
-                ]),
-              ),
+                  child: Image.asset('assets/clothes.png'),
+                ),
+                const Positioned(
+                  left: 110,
+                  bottom: 175,
+                  right: 12,
+                  top: 15,
+                  child: IconFavorite(),
+                ),
+              ]),
               const SizedBox(height: 5),
-              const Text('Nike Sportswear Club Fleece', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20))),
+              InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'screenNine');
+                  },
+                  child: const Text('Nike Sportswear Club Fleece', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20)))),
               const SizedBox(height: 5),
               const Padding(
                 padding: EdgeInsets.only(left: 8),
