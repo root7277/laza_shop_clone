@@ -71,12 +71,14 @@ class CartIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 25,
-      height: 25,
-      padding: const EdgeInsets.all(5),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.white, border: Border.all(width: 1, color: const Color(0xFF8F959E))),
-      child: SvgPicture.asset(cartImage),
+    return InkWell(
+      child: Container(
+        width: 25,
+        height: 25,
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.white, border: Border.all(width: 1, color: const Color(0xFF8F959E))),
+        child: SvgPicture.asset(cartImage),
+      ),
     );
   }
 }
