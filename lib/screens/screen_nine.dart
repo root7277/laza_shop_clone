@@ -95,7 +95,9 @@ class _ScreenNineState extends State<ScreenNine> {
           ),
           const SizedBox(height: 15),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'screenTen');
+              },
               style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color(0xFF9775FA)), minimumSize: MaterialStatePropertyAll(Size(375, 75))),
               child: const Padding(
                 padding: EdgeInsets.only(bottom: 20),

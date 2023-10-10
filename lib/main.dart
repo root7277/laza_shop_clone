@@ -6,6 +6,7 @@ import 'package:laza_shop_clone/screens/screen_nine.dart';
 import 'package:laza_shop_clone/screens/screen_one.dart';
 import 'package:laza_shop_clone/screens/screen_seven.dart';
 import 'package:laza_shop_clone/screens/screen_six.dart';
+import 'package:laza_shop_clone/screens/screen_ten.dart';
 import 'package:laza_shop_clone/screens/screen_tree.dart';
 import 'package:laza_shop_clone/screens/screen_two.dart';
 import 'package:laza_shop_clone/screens/splash_screen.dart';
@@ -38,6 +39,7 @@ class _MyAppState extends State<MyApp> {
         'screenSeven': (context) => const ScreenSeven(),
         'screenEight': (context) => const ScreenEight(),
         'screenNine': (context) => const ScreenNine(),
+        'screenTen': (context) => const ScreenTen(),
       },
     );
   }
