@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laza_shop_clone/screens/screen_eight.dart';
+import 'package:laza_shop_clone/screens/screen_eleven.dart';
 import 'package:laza_shop_clone/screens/screen_fiwe.dart';
 import 'package:laza_shop_clone/screens/screen_four.dart';
 import 'package:laza_shop_clone/screens/screen_nine.dart';
@@ -8,6 +9,7 @@ import 'package:laza_shop_clone/screens/screen_seven.dart';
 import 'package:laza_shop_clone/screens/screen_six.dart';
 import 'package:laza_shop_clone/screens/screen_ten.dart';
 import 'package:laza_shop_clone/screens/screen_tree.dart';
+import 'package:laza_shop_clone/screens/screen_twelve.dart';
 import 'package:laza_shop_clone/screens/screen_two.dart';
 import 'package:laza_shop_clone/screens/splash_screen.dart';
 
@@ -40,6 +42,8 @@ class _MyAppState extends State<MyApp> {
         'screenEight': (context) => const ScreenEight(),
         'screenNine': (context) => const ScreenNine(),
         'screenTen': (context) => const ScreenTen(),
+        'screenEleven': (context) => const ScreenEleven(),
+        'screenTwelve': (context) => const ScreenTwelve(),
       },
     );
   }

@@ -66,7 +66,7 @@ class _ScreenTenState extends State<ScreenTen> {
           const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, '');
+              Navigator.pushNamed(context, 'screenEleven');
             },
             style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color(0xFF9775FA)), minimumSize: MaterialStatePropertyAll(Size(375, 75))),
             child: const Padding(
