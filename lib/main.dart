@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laza_shop_clone/screens/add_card.dart';
+import 'package:laza_shop_clone/screens/save_card.dart';
 import 'package:laza_shop_clone/screens/screen_eight.dart';
 import 'package:laza_shop_clone/screens/screen_eleven.dart';
 import 'package:laza_shop_clone/screens/screen_fiwe.dart';
@@ -46,6 +47,7 @@ class _MyAppState extends State<MyApp> {
         'screenEleven': (context) => const ScreenEleven(),
         'screenTwelve': (context) => const ScreenTwelve(),
         'addCard': (context) => const AddCardPage(),
+        'saveCard': (context) => const SaveCardScreen(),
       },
     );
   }

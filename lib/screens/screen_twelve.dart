@@ -94,7 +94,7 @@ class _ScreenTwelveState extends State<ScreenTwelve> {
               const SizedBox(height: 27),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'screenTwelve');
+                  Navigator.pushNamed(context, 'saveCard');
                 },
                 style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color(0xFF9775FA)), minimumSize: MaterialStatePropertyAll(Size(375, 75))),
                 child: const Padding(
@@ -105,7 +105,6 @@ class _ScreenTwelveState extends State<ScreenTwelve> {
                   ),
                 ),
               ),
-              const SizedBox(height: 100)
             ],
           ),
         ],
