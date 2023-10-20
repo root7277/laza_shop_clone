@@ -15,6 +15,7 @@ class _ScreenEightState extends State<ScreenEight> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 45),
         child: Column(
