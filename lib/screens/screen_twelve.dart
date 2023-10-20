@@ -72,7 +72,7 @@ class _ScreenTwelveState extends State<ScreenTwelve> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Save as primary address',
+                  'Save card info',
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20)),
                 ),
                 Switch(
