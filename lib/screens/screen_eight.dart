@@ -114,7 +114,7 @@ class _ScreenEightState extends State<ScreenEight> {
                   SvgPicture.asset('assets/drawer/Logout.svg'),
                   const SizedBox(width: 10),
                   const Text(
-                    'Dark Mode',
+                    'Logout',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Color(0xFFFF5757)),
                   ),
                 ],
