@@ -13,11 +13,30 @@ class ScreenEight extends StatefulWidget {
 }
 
 class _ScreenEightState extends State<ScreenEight> {
+  int currentPageIndex = 0;
   bool isSwitched2 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: currentPageIndex,
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+        backgroundColor: Colors.white,
+        animationDuration: const Duration(milliseconds: 1000),
+        indicatorColor: const Color.fromARGB(255, 106, 223, 122),
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.home, color: Colors.grey), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.favorite, color: Colors.grey), label: 'Favorite'),
+          NavigationDestination(icon: Icon(Icons.shopping_bag, color: Colors.grey), label: 'Shopping'),
+          NavigationDestination(icon: Icon(Icons.account_balance_wallet_outlined, color: Colors.grey), label: 'Wallet'),
+        ],
+      ),
       drawer: Drawer(
         child: ListView(
           children: [
@@ -113,9 +132,12 @@ class _ScreenEightState extends State<ScreenEight> {
                 children: [
                   SvgPicture.asset('assets/drawer/Logout.svg'),
                   const SizedBox(width: 10),
-                  const Text(
-                    'Logout',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Color(0xFFFF5757)),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Logout',
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Color(0xFFFF5757)),
+                    ),
                   ),
                 ],
               ),
@@ -147,15 +169,20 @@ class _ScreenEightState extends State<ScreenEight> {
                     ),
                   );
                 }),
-                Container(
-                  width: 50,
-                  height: 50,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: const Color(0xFFF5F6FA),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'screenTen');
+                  },
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: const Color(0xFFF5F6FA),
+                    ),
+                    child: SvgPicture.asset('assets/Bag.svg'),
                   ),
-                  child: SvgPicture.asset('assets/Bag.svg'),
                 ),
               ],
             ),
@@ -211,7 +238,7 @@ class _ScreenEightState extends State<ScreenEight> {
                 children: [
                   SizedBox(height: 15),
                   ViewAll(textLeading: 'New Arraival', textTraeling: 'View All'),
-                  SizedBox(height: 340, child: ChooseClothes()),
+                  SizedBox(height: 292, child: ChooseClothes()),
                 ],
               ),
             ),

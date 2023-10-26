@@ -9,6 +9,7 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
+  int count = 1;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,56 +29,73 @@ class _CartState extends State<Cart> {
               child: Image.asset('assets/cart.png'),
             ),
             const SizedBox(width: 15),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Men\'s Tie-Dye T-Shirt \n Nike Sportswear', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20))),
-                SizedBox(height: 10),
-                Text('\$45 (-\$4.00 Tax)', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Color(0xFF8F959E))),
-                SizedBox(height: 15),
+                const Text('Men\'s Tie-Dye T-Shirt \n Nike Sportswear', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20))),
+                const SizedBox(height: 10),
+                const Text('\$45 (-\$4.00 Tax)', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Color(0xFF8F959E))),
+                const SizedBox(height: 15),
                 Row(
                   children: [
                     SizedBox(
-                      width: 90,
+                      width: 95,
                       child: Row(
                         children: [
-                          CartIcon(cartImage: 'assets/arrow_down.svg'),
-                          SizedBox(width: 15),
-                          Text('1', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFF1D1E20))),
-                          SizedBox(width: 15),
-                          CartIcon(cartImage: 'assets/arrow_up.svg'),
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                if (count > 1) {
+                                  count--;
+                                } else {
+                                  count;
+                                }
+                              });
+                            },
+                            child: Container(
+                              width: 25,
+                              height: 25,
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.white, border: Border.all(width: 1, color: const Color(0xFF8F959E))),
+                              child: SvgPicture.asset('assets/arrow_down.svg'),
+                            ),
+                          ),
+                          const SizedBox(width: 15),
+                          Text(count.toString(), style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Color(0xFF1D1E20))),
+                          const SizedBox(width: 15),
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                count++;
+                              });
+                            },
+                            child: Container(
+                              width: 25,
+                              height: 25,
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.white, border: Border.all(width: 1, color: const Color(0xFF8F959E))),
+                              child: SvgPicture.asset('assets/arrow_up.svg'),
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                    SizedBox(width: 68),
-                    CartIcon(cartImage: 'assets/Delete.svg')
+                    const SizedBox(width: 65),
+                    InkWell(
+                      child: Container(
+                        width: 25,
+                        height: 25,
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.white, border: Border.all(width: 1, color: const Color(0xFF8F959E))),
+                        child: SvgPicture.asset('assets/Delete.svg'),
+                      ),
+                    ),
                   ],
                 )
               ],
             )
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CartIcon extends StatelessWidget {
-  final String cartImage;
-  const CartIcon({
-    super.key,
-    required this.cartImage,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      child: Container(
-        width: 25,
-        height: 25,
-        padding: const EdgeInsets.all(5),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.white, border: Border.all(width: 1, color: const Color(0xFF8F959E))),
-        child: SvgPicture.asset(cartImage),
       ),
     );
   }
