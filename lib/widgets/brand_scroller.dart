@@ -26,22 +26,25 @@ class _BrandScrollerState extends State<BrandScroller> {
               itemCount: snapshot.data.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color(0xFFF5F6FA),
-                  ),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5, right: 5),
-                        child: Text(
-                          snapshot.data[index],
-                          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20)),
-                        ),
-                      )
-                    ],
+                return InkWell(
+                  onTap: () {},
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color(0xFFF5F6FA),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 5, right: 5),
+                          child: Text(
+                            snapshot.data[index],
+                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20)),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 );
               });

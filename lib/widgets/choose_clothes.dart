@@ -11,10 +11,13 @@ class _ChooseClothesState extends State<ChooseClothes> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        itemCount: 10,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 0.6, crossAxisSpacing: 20),
-        itemBuilder: (context, index) {
-          return Column(
+      physics: const BouncingScrollPhysics(),
+      itemCount: 10,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 0.6, crossAxisSpacing: 20),
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: () => Navigator.pushNamed(context, 'screenNine'),
+          child: Column(
             children: [
               Stack(children: [
                 Container(
@@ -34,11 +37,7 @@ class _ChooseClothesState extends State<ChooseClothes> {
                 ),
               ]),
               const SizedBox(height: 5),
-              InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, 'screenNine');
-                  },
-                  child: const Text('Nike Sportswear Club Fleece', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20)))),
+              const Text('Nike Sportswear Club Fleece', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: Color(0xFF1D1E20))),
               const SizedBox(height: 5),
               const Padding(
                 padding: EdgeInsets.only(left: 8),
@@ -49,8 +48,10 @@ class _ChooseClothesState extends State<ChooseClothes> {
                 ),
               )
             ],
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 }
 
